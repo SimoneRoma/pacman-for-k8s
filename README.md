@@ -10,18 +10,6 @@ ServiceType: LoadBalancer must be available for external connectivity to the Pac
 
 ## Deployment
 
-### Using Helm to install
-````
-kubectl create namespace pacman
-
-helm repo add veducate https://saintdle.github.io/helm-charts/
-helm install pacman veducate/pacman -n pacman
-
-# You can see the available values by running
-helm show values veducate/pacman
-````
-[Read this blog post](https://veducate.co.uk/how-to-create-helm-chart/) to learn how this Helm Chart was created.
-
 ### Using a Script for installation
 Clone repo and run ```chmod +X pacman-install.sh``` and then run file ```./pacman-install.sh```
 
@@ -56,8 +44,7 @@ The application is made up of the following components:
 
 ## Source
 
-These are modified files from the below github repo for the node.js version, which contain the necessary changes to run in VMware Tanzu Kubernetes Grid (TKG) such as updated api values and pod security policies (psp) with associated service accounts and RBAC.
+These are modified files from the below github repo for the node.js version, which contain the necessary changes to run in Aruba Managed Kubernetes such as updated api values with associated service accounts and RBAC.
 
 > <https://github.com/font/k8s-example-apps/tree/master/pacman-nodejs-app>
 
-Security changes to the deployment such as setting up mongodb auth were thanks to [Dav1x](https://github.com/dav1x/) you can find his [Pac-Man deployment for OpenShift here](https://github.com/dav1x/pacman-ocp).
