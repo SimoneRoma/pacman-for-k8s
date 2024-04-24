@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pacman-ingress
+  namespace: pacman
+spec:
+  defaultBackend:
+    service:
+      name: pacman
+      port:
+        number: 80
+  ingressClassName: nginx
+  rules:
+  - host: '*.labeng.cloud'
+    http:
+      paths:
+      - backend:
+          service:
+            name: pacman
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
