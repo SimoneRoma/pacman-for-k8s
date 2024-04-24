@@ -23,7 +23,7 @@ spec:
           matchLabels:
             name: pacman
       containers:
-      - image: sroma888/pacman:cloud42
+      - image: sroma888/pacman:cloud10
         name: pacman
         ports:
         - containerPort: 8080
